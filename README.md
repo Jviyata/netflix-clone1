@@ -1,16 +1,158 @@
-# React + Vite
+# Netflix Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern streaming platform interface built with React and Vite.
 
-Currently, two official plugins are available:
+**Live Demo:** [https://jviyata.github.io/netflix-clone1/](https://jviyata.github.io/netflix-clone1/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+A responsive Netflix clone that replicates the streaming platform's user interface. Built with React and Vite, featuring component-based architecture and responsive design.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+**Current:**
+- Dynamic navigation header
+- Featured hero section
+- Horizontal scrolling movie rows
+- Interactive movie cards with hover effects
+- Responsive design
+
+**Planned:**
+- TMDB API integration for real movie data
+- Search functionality
+- Movie detail modals
+- Video player component
+- User profiles and authentication
+- My List feature
+
+---
+
+## Tech Stack
+
+- **React** - UI Library
+- **Vite** - Build Tool
+- **JavaScript** - Programming Language
+- **CSS** - Styling
+- **GitHub Pages** - Hosting
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Jviyata/netflix-clone1.git
+```
+
+2. Navigate to project directory:
+```bash
+cd netflix-clone1/netflix-clone1
+```
+
+3. Install dependencies:
+```bash
+npm install
+```
+
+4. Start development server:
+```bash
+npm run dev
+```
+
+5. Open browser at:
+```
+http://localhost:5173
+```
+
+---
+
+## Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run deploy` | Deploy to GitHub Pages |
+
+---
+
+## Project Structure
+```
+netflix-clone1/
+├── public/
+│   └── assets/
+│       └── temp.png
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── Hero.jsx
+│   │   ├── MovieCard.jsx
+│   │   └── MovieRow.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+---
+
+## Roadmap
+
+### Phase 1: Foundation (Complete)
+- [x] Set up React + Vite project
+- [x] Create basic components
+- [x] Implement responsive design
+- [x] Deploy to GitHub Pages
+
+### Phase 2: Enhanced Functionality
+- [ ] Integrate TMDB API
+- [ ] Add search functionality
+- [ ] Implement movie detail modals
+- [ ] Create loading states
+
+### Phase 3: Advanced Features
+- [ ] Build video player
+- [ ] Add user authentication
+- [ ] Implement My List
+- [ ] Create genre browsing
+
+---
+
+## Deployment
+
+Deploy to GitHub Pages:
+```bash
+npm run deploy
+```
+
+---
+
+## License
+
+This project is open source and available under the MIT License.
+
+---
+
+## Author
+
+**Jviyata**
+- GitHub: [@Jviyata](https://github.com/Jviyata)
+
+---
+
+**Note:** Educational project. Netflix and its logo are trademarks of Netflix, Inc.
