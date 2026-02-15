@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - copilot/fix-publishing-issue
   workflow_dispatch:
 
 permissions:
