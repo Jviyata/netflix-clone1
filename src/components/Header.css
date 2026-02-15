@@ -1,0 +1,152 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #000;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+}
+
+.logo {
+  color: #e50914;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #b3b3b3;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+  min-width: fit-content;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.search-input {
+  padding: 8px 12px 8px 40px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #222;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 200px;
+}
+
+.search-input:focus {
+  border-color: #fff;
+  background: #000;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.profile-icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .header {
+    padding: 20px 30px;
+  }
+  
+  .nav {
+    gap: 15px;
+  }
+  
+  .nav-link {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  .nav {
+    gap: 10px;
+  }
+  
+  .nav-link {
+    font-size: 12px;
+  }
+  
+  .search-input {
+    width: 150px;
+  }
+  
+  .right-section {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 15px;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .search-input {
+    width: 120px;
+    font-size: 12px;
+  }
+  
+  .profile-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+}
