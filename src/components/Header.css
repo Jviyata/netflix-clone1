@@ -275,12 +275,12 @@
     padding: 20px 30px;
   }
   
-  .nav {
+  .nav-menu {
     gap: 15px;
   }
   
-  .nav-link {
-    font-size: 13px;
+  .nav-item {
+    font-size: 16px;
   }
 }
 
@@ -290,22 +290,23 @@
   }
   
   .logo {
-    font-size: 24px;
+    width: 150px;
+    height: 50px;
   }
   
-  .nav {
+  .nav-menu {
     gap: 10px;
   }
   
-  .nav-link {
-    font-size: 12px;
+  .nav-item {
+    font-size: 14px;
   }
   
   .search-input {
     width: 150px;
   }
   
-  .right-section {
+  .header-right {
     gap: 15px;
   }
 }
@@ -315,7 +316,7 @@
     padding: 10px 15px;
   }
   
-  .nav {
+  .nav-menu {
     display: none;
   }
   

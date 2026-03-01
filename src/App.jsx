@@ -18,7 +18,6 @@ const imageMap = {
   4: '/netflix-clone1/assets/4.jpg',
   5: '/netflix-clone1/assets/5.jpg',
   6: '/netflix-clone1/assets/6.jpg',
-  7: '/netflix-clone1/assets/7.jpg',
   8: '/netflix-clone1/assets/8.jpg',
   9: '/netflix-clone1/assets/9.jpg',
   10: '/netflix-clone1/assets/10.jpg',
@@ -35,7 +34,6 @@ const imageMap = {
   21: '/netflix-clone1/assets/21.jpg',
   22: '/netflix-clone1/assets/22.jpg',
   23: '/netflix-clone1/assets/23.jpg',
-  24: '/netflix-clone1/assets/24.jpg',
   25: '/netflix-clone1/assets/25.jpg',
   26: '/netflix-clone1/assets/26.jpg',
   27: '/netflix-clone1/assets/27.jpg',
@@ -55,7 +53,6 @@ function App() {
     { id: 3, title: 'Gilmore Girls', image: imageMap[3], category: 'drama', type: 'tv', description: 'A mother and daughter navigate life in the quirky town of Stars Hollow with coffee and conversation.', trailerUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', cast: 'Lorelai Gilmore, Rory Gilmore, Luke Danes' },
     { id: 4, title: 'Gossip Girl', image: imageMap[4], category: 'drama', type: 'tv', description: 'Manhattan\'s elite navigate scandals and secrets in the Upper East Side.', trailerUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', cast: 'Blake Lively, Leighton Meester, Ed Westwick' },
     { id: 5, title: 'Outer Banks', image: imageMap[5], category: 'drama', type: 'tv', description: 'A tight-knit group of teens search for hidden treasure while navigating class divisions.', trailerUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', cast: 'Chase Stokes, Madelyn Cline, Madison Bailey' },
-    { id: 6, title: 'Outer Banks', image: imageMap[6], category: 'drama', type: 'tv', description: 'A tight-knit group of teens search for hidden treasure while navigating class divisions.', trailerUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', cast: 'Chase Stokes, Madelyn Cline, Madison Bailey' },
     { id: 8, title: 'Sweet Magnolias', image: imageMap[8], category: 'drama', type: 'tv', description: 'Three lifelong friends support each other through the complexities of life, family, and new romance.', trailerUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', cast: 'JoAnna Garcia Swisher, Brooke Elliott, Heather Headley' },
     { id: 9, title: 'Firefly Lane', image: imageMap[9], category: 'drama', type: 'tv', description: 'Two best friends navigate decades of friendship, from teenage years to adulthood.', trailerUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', cast: 'Katherine Heigl, Sarah Chalke, Yael Yurman' },
     { id: 10, title: 'The Crown', image: imageMap[10], category: 'drama', type: 'tv', description: 'The political rivalries and romance of Queen Elizabeth II\'s reign and the events that shaped the second half of the 20th century.', trailerUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', cast: 'Claire Foy, Olivia Colman, Gillian Anderson' },
@@ -277,10 +274,6 @@ function App() {
       />
     </div>
   )
-}
-
-const styles = {
-  // Remove unused styles
 }
 
 export default App

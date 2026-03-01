@@ -1,12 +1,17 @@
 import { useState } from 'react'
 
-function MovieCard({ movie, onDoubleClick, onAddToList }) {
+function MovieCard({ movie, onMovieClick, onAddToList }) {
   const [isClicked, setIsClicked] = useState(false)
   const [isPlayingTrailer, setIsPlayingTrailer] = useState(false)
 
   const handleCardClick = (e) => {
     e.stopPropagation()
     setIsClicked(!isClicked)
+  }
+
+  const handleOpenModal = (e) => {
+    e.stopPropagation()
+    onMovieClick?.(movie)
   }
 
   return (
@@ -16,8 +21,7 @@ function MovieCard({ movie, onDoubleClick, onAddToList }) {
           ...styles.card,
           ...(isClicked && styles.cardExpanded),
         }}
-        onClick={handleCardClick}
-        onDoubleClick={onDoubleClick}
+        onClick={handleOpenModal}
       >
         {!isClicked && (
           <img src={movie.image} alt={movie.title} style={{

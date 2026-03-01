@@ -42,7 +42,7 @@ function MovieRow({ title, movies, onMovieClick, onAddToList, onViewAll }) {
             <MovieCard
               key={`${movie.id}-${index}`}
               movie={movie}
-              onDoubleClick={() => onMovieClick(movie)}
+              onMovieClick={() => onMovieClick(movie)}
               onAddToList={onAddToList}
             />
           ))}
