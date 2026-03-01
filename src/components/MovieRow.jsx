@@ -5,8 +5,8 @@ import './MovieRow.css'
 function MovieRow({ title, movies, onMovieClick, onAddToList, onViewAll }) {
   const scrollContainer = useRef(null)
   
-  // Duplicate movies for infinite scroll effect
-  const displayMovies = [...movies, ...movies]
+  // Display movies without duplication
+  const displayMovies = movies
 
   const scroll = (direction) => {
     const container = scrollContainer.current

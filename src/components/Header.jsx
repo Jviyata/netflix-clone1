@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import './Header.css';
+import netflixLogo from '../assets/Netflix.png';
 
-function Header({ searchTerm, onSearchChange, onProfileClick, allMovies = [], onViewAllMovies, onViewAllTV }) {
+function Header({ searchTerm, onSearchChange, onProfileClick, allMovies = [], onHome, onViewAllMovies, onViewAllTV }) {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const searchInputRef = useRef(null);
@@ -91,14 +92,14 @@ function Header({ searchTerm, onSearchChange, onProfileClick, allMovies = [], on
       <div className="header-content">
         <div className="logo">
           <img 
-            src="data:image/svg+xml,%3Csvg viewBox='0 0 111 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='24' font-size='28' font-weight='900' fill='%23E50914' letter-spacing='3'%3EFLLIX%3C/text%3E%3C/svg%3E"
+            src={netflixLogo}
             alt="Netflix"
             className="netflix-logo"
           />
         </div>
         
         <nav className="nav-menu">
-          <a href="#" className="nav-item active" onClick={(e) => { e.preventDefault() }}>Home</a>
+          <a href="#" className="nav-item active" onClick={(e) => { e.preventDefault(); onHome?.() }}>Home</a>
           <a href="#" className="nav-item" onClick={(e) => { e.preventDefault(); onViewAllTV?.() }}>TV Shows</a>
           <a href="#" className="nav-item" onClick={(e) => { e.preventDefault(); onViewAllMovies?.() }}>Movies</a>
         </nav>

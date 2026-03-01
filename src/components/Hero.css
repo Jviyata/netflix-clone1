@@ -50,10 +50,14 @@
 
 .hero-title {
   font-size: 64px;
-  font-weight: 900;
+  font-weight: 600;
   margin-bottom: 12px;
   text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8);
   letter-spacing: -1px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-subtitle {

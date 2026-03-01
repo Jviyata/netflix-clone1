@@ -84,7 +84,7 @@ function MovieCard({ movie, onDoubleClick, onAddToList }) {
 
               <div style={styles.castSection}>
                 <span style={styles.castLabel}>Cast:</span>
-                <span style={styles.castNames}> Kristen Bell, Enrico Colantoni, Jason Dohring</span>
+                <span style={styles.castNames}> {movie.cast || 'TBA'}</span>
               </div>
 
               <div style={styles.creatorSection}>
