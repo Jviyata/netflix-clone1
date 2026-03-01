@@ -1,12 +1,22 @@
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import MovieCard from './MovieCard'
 import './MovieRow.css'
 
-function MovieRow({ title, movies, onMovieClick, onAddToList, onViewAll }) {
+function MovieRow({ title, movies, onMovieClick, onAddToList, onViewAll, infiniteScroll = true, showArrows = true }) {
   const scrollContainer = useRef(null)
+  const [displayMovies, setDisplayMovies] = useState([])
   
-  // Display movies without duplication
-  const displayMovies = movies
+  // Create infinite scroll by duplicating movies
+  useEffect(() => {
+    if (movies.length > 0) {
+      // Only duplicate if infinite scroll is enabled
+      if (infiniteScroll) {
+        setDisplayMovies([...movies, ...movies, ...movies])
+      } else {
+        setDisplayMovies(movies)
+      }
+    }
+  }, [movies, infiniteScroll])
 
   const scroll = (direction) => {
     const container = scrollContainer.current
@@ -20,9 +30,18 @@ function MovieRow({ title, movies, onMovieClick, onAddToList, onViewAll }) {
   }
 
   const handleScroll = (e) => {
+    if (!infiniteScroll) return // Disable infinite scroll logic if prop is false
+    
     const container = e.target
-    if (container.scrollLeft >= container.scrollWidth - container.clientWidth - 10) {
-      container.scrollLeft = 0
+    const singleSetWidth = container.scrollWidth / 3
+    
+    // When reaching the end of the first set, jump to beginning of second set
+    if (container.scrollLeft >= singleSetWidth * 2) {
+      container.scrollLeft = singleSetWidth
+    }
+    // When reaching the beginning, jump to end of second set
+    else if (container.scrollLeft <= 0) {
+      container.scrollLeft = singleSetWidth
     }
   }
 
@@ -32,7 +51,7 @@ function MovieRow({ title, movies, onMovieClick, onAddToList, onViewAll }) {
         <h2 className="movie-row-title">{title}</h2>
       </div>
       <div className="movie-row-wrapper">
-        <button onClick={() => scroll('left')} className="movie-row-button" title="Scroll left">◀</button>
+        {showArrows && <button onClick={() => scroll('left')} className="movie-row-button" title="Scroll left">◀</button>}
         <div 
           ref={scrollContainer}
           className="movie-row"
@@ -47,7 +66,7 @@ function MovieRow({ title, movies, onMovieClick, onAddToList, onViewAll }) {
             />
           ))}
         </div>
-        <button onClick={() => scroll('right')} className="movie-row-button" title="Scroll right">▶</button>
+        {showArrows && <button onClick={() => scroll('right')} className="movie-row-button" title="Scroll right">▶</button>}
       </div>
     </div>
   )

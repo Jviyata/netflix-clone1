@@ -3,6 +3,7 @@ import { useState } from 'react'
 function MovieCard({ movie, onMovieClick, onAddToList }) {
   const [isClicked, setIsClicked] = useState(false)
   const [isPlayingTrailer, setIsPlayingTrailer] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   const handleCardClick = (e) => {
     e.stopPropagation()
@@ -20,12 +21,16 @@ function MovieCard({ movie, onMovieClick, onAddToList }) {
         style={{
           ...styles.card,
           ...(isClicked && styles.cardExpanded),
+          ...(isHovered && !isClicked && styles.cardHover),
         }}
         onClick={handleOpenModal}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         {!isClicked && (
           <img src={movie.image} alt={movie.title} style={{
             ...styles.image,
+            ...(isHovered && { filter: 'brightness(1.1) contrast(1.05)' }),
           }} />
         )}
         
@@ -183,6 +188,10 @@ const styles = {
     overflow: 'visible',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
+  },
+  cardHover: {
+    transform: 'scale(1.05)',
+    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)',
   },
   cardExpanded: {
     position: 'fixed',
@@ -427,7 +436,6 @@ const styles = {
     transform: 'scale(1.1)',
   },
   expandedContent: {
-    backgroundColor: '#000',
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
@@ -442,7 +450,7 @@ const styles = {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
-    opacity: 0.4,
+    opacity: 1,
     zIndex: 0,
   },
   closeButton: {
@@ -467,8 +475,9 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '16px',
-    backgroundColor: 'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9))',
-    background: 'linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9))',
+    background: 'linear-gradient(to bottom, rgba(180,180,180,0.4), rgba(150,150,150,0.6))',
+    borderRadius: '8px',
+    margin: '20px',
   },
   title: {
     fontSize: '62px',

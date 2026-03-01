@@ -21,6 +21,9 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #e50914 0%, #831010 100%);
+  background-image: url('../assets/herobkrnd.jpeg');
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-bg-image {

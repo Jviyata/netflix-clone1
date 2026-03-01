@@ -14,11 +14,6 @@ function Hero({ onMovieClick, movieData }) {
   return (
     <div className="hero">
       <div className="hero-background">
-        <img 
-          src={heroImage}
-          alt="Hero Background" 
-          className="hero-bg-image"
-        />
       </div>
       <div className="hero-content">
         <h1 className="hero-title">BRIDGERTON</h1>

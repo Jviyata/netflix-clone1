@@ -1,11 +1,10 @@
 import React, { useState, useRef } from 'react';
 import './Header.css';
 import netflixLogo from '../assets/Netflix.png';
+import SearchBar from './SearchBar';
 
 function Header({ searchTerm, onSearchChange, onProfileClick, allMovies = [], onHome, onViewAllMovies, onViewAllTV }) {
   const [showNotifications, setShowNotifications] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  const searchInputRef = useRef(null);
 
   // Use actual movies from the app for notifications, or create default ones
   const getNotifications = () => {
@@ -107,45 +106,10 @@ function Header({ searchTerm, onSearchChange, onProfileClick, allMovies = [], on
         <div className="header-spacer"></div>
 
         <div className="header-right">
-          <div className="search-box">
-            <svg 
-              className="search-icon" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2"
-              onClick={() => {
-                setShowSearch(true);
-                setTimeout(() => searchInputRef.current?.focus(), 0);
-              }}
-              style={{ cursor: 'pointer' }}
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.35-4.35"></path>
-            </svg>
-            {showSearch && (
-              <input 
-                ref={searchInputRef}
-                type="text" 
-                placeholder="Search titles, people, genres..." 
-                value={searchTerm}
-                onChange={(e) => onSearchChange(e.target.value)}
-                onBlur={() => {
-                  if (!searchTerm.trim()) {
-                    setShowSearch(false);
-                  }
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Escape') {
-                    setShowSearch(false);
-                    onSearchChange('');
-                  }
-                }}
-                className="search-input"
-                autoFocus
-              />
-            )}
-          </div>
+          <SearchBar 
+            searchTerm={searchTerm}
+            onSearchChange={onSearchChange}
+          />
 
           <div className="notification-container">
             <button 

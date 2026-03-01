@@ -30,6 +30,7 @@
   scroll-behavior: smooth;
   flex: 1;
   padding-bottom: 15px;
+  scroll-snap-type: x mandatory;
 }
 
 .movie-row::-webkit-scrollbar {

@@ -223,6 +223,8 @@ function App() {
           title="My List" 
           movies={myList}
           onMovieClick={setSelectedMovie}
+          onAddToList={handleAddToList}
+          infiniteScroll={false}
         />
       )}
 
@@ -232,6 +234,8 @@ function App() {
         movies={continueWatchingList}
         onMovieClick={setSelectedMovie}
         onAddToList={handleAddToList}
+        infiniteScroll={false}
+        showArrows={false}
       />
 
       {/* Drama Section */}
@@ -261,14 +265,6 @@ function App() {
         onViewAll={() => setShowAllMovies(true)}
       />
 
-      {/* Action Section */}
-      <MovieRow 
-        title="Action" 
-        movies={allMovies.filter(m => m.category === 'action')}
-        onMovieClick={setSelectedMovie}
-        onAddToList={handleAddToList}
-        onViewAll={() => setShowAllMovies(true)}
-      />
       {/* Movie Modal */}
       <MovieModal 
         movie={selectedMovie}
