@@ -66,22 +66,18 @@ function MovieCard({ movie, onMovieClick, onAddToList }) {
               <h1 style={styles.title}>{movie.title}</h1>
               
               <div style={styles.metadata}>
-                <span style={styles.metadataItem}>2024</span>
+                <span style={styles.metadataItem}>{movie.year || 2024}</span>
                 <span style={styles.metadataDivider}>•</span>
                 <span style={styles.metadataItem}>{movie.category.charAt(0).toUpperCase() + movie.category.slice(1)}</span>
                 <span style={styles.metadataDivider}>•</span>
-                <span style={styles.metadataItem}>4 Seasons</span>
+                <span style={styles.metadataItem}>{movie.seasons || 1} {movie.seasons === 1 ? 'Season' : 'Seasons'}</span>
                 <span style={styles.metadataDivider}>•</span>
                 <span style={styles.metadataItem}>HD</span>
               </div>
 
               <div style={styles.ratingSection}>
-                <span style={styles.ratingBadge}>TV-14</span>
-                <span style={styles.ratingText}>Sex, substances, language</span>
-              </div>
-
-              <div style={styles.watchSection}>
-                <span style={styles.watchLabel}>Watch Season 4 Now</span>
+                <span style={styles.ratingBadge}>{movie.rating || 'TV-14'}</span>
+                <span style={styles.ratingText}>{movie.type === 'tv' ? `Watch Season ${movie.seasons} Now` : 'Watch Now'}</span>
               </div>
               
               <p style={styles.description}>{movie.description}</p>
@@ -92,8 +88,8 @@ function MovieCard({ movie, onMovieClick, onAddToList }) {
               </div>
 
               <div style={styles.creatorSection}>
-                <span style={styles.creatorLabel}>Creator:</span>
-                <span style={styles.creatorNames}> Rob Thomas</span>
+                <span style={styles.creatorLabel}>{movie.type === 'tv' ? 'Creator:' : 'Director:'}</span>
+                <span style={styles.creatorNames}> {movie.creator || 'Unknown'}</span>
               </div>
 
               <div style={styles.recommendationSection}>
