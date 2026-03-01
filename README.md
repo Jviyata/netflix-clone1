@@ -1,5 +1,15 @@
 # Netflix Clone – Interactive React Application
 
+**Live Site:**  
+https://jviyata.github.io/netflix-clone1/  
+
+**Important:** Please open the live site in an **Incognito / Private Browser window** to ensure the latest deployed version loads correctly and avoids cached files.
+
+**Repository:**  
+https://github.com/Jviyata/netflix-clone1  
+
+---
+
 A fully functional Netflix clone built with React and Vite, featuring responsive design, interactive components, and modern UI/UX patterns.
 
 ---
@@ -110,16 +120,6 @@ This simplified routing structure keeps navigation controlled within App.jsx.
 
 ---
 
-## Live Site URL + Repository URL
-
-**Live Site:**  
-https://jviyata.github.io/netflix-clone1/
-
-**Repository:**  
-https://github.com/Jviyata/netflix-clone1
-
----
-
 ## Future Improvements
 
 - localStorage integration for persistent My List  
@@ -136,4 +136,4 @@ https://github.com/Jviyata/netflix-clone1
 ---
 
 Version 1.0.0  
-Status: Complete and deployed  
+Status: Complete and deployed
