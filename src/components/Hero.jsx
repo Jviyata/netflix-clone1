@@ -1,16 +1,14 @@
 import './Hero.css'
+import heroImage from '../assets/herobkrnd.jpeg'
 
 function Hero() {
   return (
     <div className="hero">
       <div className="hero-background">
         <img 
-          src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=1920&h=1080&fit=crop" 
+          src={heroImage}
           alt="Hero Background" 
           className="hero-bg-image"
-          onError={(e) => {
-            e.target.style.display = 'none';
-          }}
         />
       </div>
       <div className="hero-content">

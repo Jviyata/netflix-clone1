@@ -36,7 +36,7 @@ function MovieCard({ movie, onDoubleClick, onAddToList }) {
             </button>
             <iframe 
               style={styles.trailerIframe}
-              src={`${movie.trailerUrl}?autoplay=1&controls=1`}
+              src={`${movie.trailerUrl}?autoplay=1&controls=1&mute=1`}
               title={`${movie.title} Trailer`}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

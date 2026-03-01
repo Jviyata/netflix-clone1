@@ -1,13 +1,73 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Header.css';
 
 function Header({ searchTerm, onSearchChange, onProfileClick, allMovies = [], onViewAllMovies, onViewAllTV }) {
   const [showNotifications, setShowNotifications] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const searchInputRef = useRef(null);
 
   // Use actual movies from the app for notifications, or create default ones
   const getNotifications = () => {
     if (allMovies.length > 0) {
-      return allMovies.slice(0, 6).map((movie, index) => ({
+      const bridgerton = allMovies.find(m => m.title === 'Bridgerton');
+      const findingHerEdge = allMovies.find(m => m.title === 'Finding Her Edge');
+      const gilmoreGirls = allMovies.find(m => m.title === 'Gilmore Girls');
+      const gossipGirl = allMovies.find(m => m.title === 'Gossip Girl');
+      const outerBanks = allMovies.find(m => m.title === 'Outer Banks');
+
+      const customNotifications = [];
+
+      if (bridgerton) {
+        customNotifications.push({
+          id: bridgerton.id,
+          title: 'Bridgerton',
+          subtitle: 'Part 2 is out now!',
+          image: bridgerton.image,
+          time: '1 week ago'
+        });
+      }
+
+      if (findingHerEdge) {
+        customNotifications.push({
+          id: findingHerEdge.id,
+          title: 'You might like',
+          subtitle: 'Finding Her Edge',
+          image: findingHerEdge.image,
+          time: '2 weeks ago'
+        });
+      }
+
+      if (gilmoreGirls) {
+        customNotifications.push({
+          id: gilmoreGirls.id,
+          title: 'New Release',
+          subtitle: 'Gilmore Girls',
+          image: gilmoreGirls.image,
+          time: '3 weeks ago'
+        });
+      }
+
+      if (gossipGirl) {
+        customNotifications.push({
+          id: gossipGirl.id,
+          title: 'New Release',
+          subtitle: 'Gossip Girl',
+          image: gossipGirl.image,
+          time: '4 weeks ago'
+        });
+      }
+
+      if (outerBanks) {
+        customNotifications.push({
+          id: outerBanks.id,
+          title: 'New Release',
+          subtitle: 'Outer Banks',
+          image: outerBanks.image,
+          time: '5 weeks ago'
+        });
+      }
+
+      return customNotifications.length > 0 ? customNotifications : allMovies.slice(0, 6).map((movie, index) => ({
         id: movie.id,
         title: 'New Release',
         subtitle: movie.title,
@@ -46,6 +106,46 @@ function Header({ searchTerm, onSearchChange, onProfileClick, allMovies = [], on
         <div className="header-spacer"></div>
 
         <div className="header-right">
+          <div className="search-box">
+            <svg 
+              className="search-icon" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2"
+              onClick={() => {
+                setShowSearch(true);
+                setTimeout(() => searchInputRef.current?.focus(), 0);
+              }}
+              style={{ cursor: 'pointer' }}
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            {showSearch && (
+              <input 
+                ref={searchInputRef}
+                type="text" 
+                placeholder="Search titles, people, genres..." 
+                value={searchTerm}
+                onChange={(e) => onSearchChange(e.target.value)}
+                onBlur={() => {
+                  if (!searchTerm.trim()) {
+                    setShowSearch(false);
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Escape') {
+                    setShowSearch(false);
+                    onSearchChange('');
+                  }
+                }}
+                className="search-input"
+                autoFocus
+              />
+            )}
+          </div>
+
           <div className="notification-container">
             <button 
               className="notification-btn" 
@@ -80,20 +180,6 @@ function Header({ searchTerm, onSearchChange, onProfileClick, allMovies = [], on
                 </div>
               </div>
             )}
-          </div>
-          
-          <div className="search-box">
-            <svg className="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.35-4.35"></path>
-            </svg>
-            <input 
-              type="text" 
-              placeholder="Search titles, people, genres..." 
-              value={searchTerm}
-              onChange={(e) => onSearchChange(e.target.value)}
-              className="search-input"
-            />
           </div>
           
           <button className="profile-icon" onClick={onProfileClick}>
