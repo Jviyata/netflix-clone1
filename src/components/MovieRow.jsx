@@ -27,15 +27,15 @@ function MovieRow({ title, movies, onMovieClick, onAddToList, onViewAll }) {
   }
 
   return (
-    <div className="container">
+    <div className="movie-row-container">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-        <h2 className="title">{title}</h2>
+        <h2 className="movie-row-title">{title}</h2>
       </div>
-      <div className="rowWrapper">
-        <button onClick={() => scroll('left')} className="scrollButton">❮</button>
+      <div className="movie-row-wrapper">
+        <button onClick={() => scroll('left')} className="movie-row-button" title="Scroll left">◀</button>
         <div 
           ref={scrollContainer}
-          className="movieRow"
+          className="movie-row"
           onScroll={handleScroll}
         >
           {displayMovies.map((movie, index) => (
@@ -47,7 +47,7 @@ function MovieRow({ title, movies, onMovieClick, onAddToList, onViewAll }) {
             />
           ))}
         </div>
-        <button onClick={() => scroll('right')} className="scrollButton">❯</button>
+        <button onClick={() => scroll('right')} className="movie-row-button" title="Scroll right">▶</button>
       </div>
     </div>
   )

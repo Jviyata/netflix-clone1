@@ -102,7 +102,7 @@ function App() {
   const [myList, setMyList] = useState([])
   const [currentProfile, setCurrentProfile] = useState(null)
   const [showAllMovies, setShowAllMovies] = useState(false)
-  const [viewType, setViewType] = useState('all') // 'all', 'movies', 'tv'
+  const [viewType, setViewType] = useState('home') // 'home', 'movies', 'tv'
   const [toast, setToast] = useState(null)
 
   const handleAddToList = (movie) => {
