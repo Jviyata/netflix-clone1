@@ -6,9 +6,7 @@ https://jviyata.github.io/netflix-clone1/
 **Important:** Please open the live site in an **Incognito / Private Browser window** to ensure the latest deployed version loads correctly and avoids cached files.
 
 **Repository:**  
-[https://github.com/Jviyata/netflix-clone1  ](https://github.com/Jviyata/netflix-clone1/tree/repostru
-
-)
+https://github.com/Jviyata/netflix-clone1/tree/repostru
 
 ---
 
